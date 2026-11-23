@@ -118,6 +118,14 @@ private:
     string _Department;
 
 public:
+
+    clsEmployee(int ID, string FirstName, string LastName, string Email, string Phone, string Title, double Salary, string Department)
+        : clsPerson(ID, FirstName, LastName, Email, Phone)
+    {
+        _Title = Title;
+        _Salary = Salary;
+        _Department = Department;
+    }
   
     void SetTitle(string Title)
     {
@@ -154,19 +162,12 @@ public:
 
 int main()
 {
-    clsPerson Person1(10, "Wail", "Mohammed", "my@gmail.com", "0098387727");
-    Person1.Print();
-    Person1.SendEmail("Hi", "How are you?");
-    Person1.SendSMS("How are you?");
+   
 
-    clsEmployee Employee1;
-    Employee1.SetFirstName("Wail");
-    Employee1.SetLastName("Mohammed");
-    Employee1.SetEmail("a@a.com");
+    clsEmployee Employee1(10, "Wael", "Ali", "wael@gmail.com", "777123456", "Backend Developer", 100000, "IT");
+
     Employee1.Print();
-    Employee1.SendEmail("Hi", "How are you?");
-    Employee1.SetSalary(1000000);
-    cout << "Salary is: " << Employee1.Salary();
+   
     cout << endl;
     system("pause");
     return 0;
